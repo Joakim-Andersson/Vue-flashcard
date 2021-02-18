@@ -11,31 +11,30 @@
 <body>
   <div id="flashcard-app" class="container">
 
-    <h1>Flashcard App!</h1>
+    <h3>It's finally time for</h3>
+    <h1> Flashcards</h1>
 
     <div class="flashcard-form">
 
-      <label for="front">Front
+      <label for="front">Front:
         <input v-model="newFrontText" type="text" id="front">
       </label>
 
-      <label for="back">Back
+      <label for="back">Back:
         <input v-on:keypress.enter="addNewCard" v-model="newBackText" type="text" id="back">
       </label>
 
       <button v-on:click="addNewCard"  >Add a New Card</button>
-      <span class="error">Oops! Flashcards need a front and a back.</span>
+      <span v-show="error" class="error">Oops! Flashcards need a front and a back.</span>
     </div>
 
 
     <ul class="flashcard-list">
       <li v-on:click="toggleCard(card)" v-for="(card, index) in cards"  >
         <transition name="flip">        
-          <p v-if="!card.flipped"  key="front" class="card"> {{card.front}}
+          <p v-bind:key="card.flipped" class="card">
+             {{card.flipped ? card.back : card.front }}
             <span v-on:click="deleteCard(index)" class="delete-card">X</span>
-        </p>
-        <p v-else class="card"> {{card.back}}
-            <span v-on:click="deleteCard(index)" key="back" class="delete-card">X</span>
         </p>
       </transition>
       </li>

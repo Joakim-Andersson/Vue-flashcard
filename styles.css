@@ -1,6 +1,9 @@
 body {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
   
   ul {
@@ -19,14 +22,24 @@ body {
     max-width: 100%;
     padding: 2em;
   }
+
+  .container h3 {
+    font-weight: 300;
+    margin: 0;
+  }
+  .container h1 {
+    font-weight: 600;
+    margin: 10px 0 20px 0;
+    color: #e44e42;
+  }
   
   .card {
     display: block;
     width: 150px;
-    height: 175px;
-    padding: 80px 50px;
-    background-color: #51aae5;
+    height: 140px;
+    padding: 50px 40px 30px 40px;
     border-radius: 7px;
+    background-image: linear-gradient(to right, #ff5d31 0%, #f9d423 100%);
     margin: 5px;
     text-align: center;
     line-height: 27px;
@@ -46,27 +59,27 @@ body {
   }
   
   li:nth-child(-n+3) .card{
-    background-color: #e65f51;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
     }
   
   li:nth-child(2n+1) .card{
-    background-color: #a17de9;
-    }
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);    
+  }
   
   li:nth-child(4n) .card{
-    background-color: #feca34;
-    }
+    background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);    
+  }
   
   li:nth-child(5n-2) .card{
-    background-color: #51aae5;
+    background-image: linear-gradient(to right, #2af598 0%, #009efd 100%);
     }
   
   li:nth-child(4n+4) .card{
-    background-color: #feca34;
+    background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
     }
   
   li:nth-child(-7n+7) .card{
-    background-color: #e46055;
+    background-image: linear-gradient(to right, #7a7a79 0% #553b3e 30%, #e7627d 46%, #b8235a 59%, #801357 100%);
     }
   
   .delete-card {
@@ -94,7 +107,11 @@ body {
   .flip-enter, .flip-leave {
     transform: rotateY(180deg);
     opacity: 0;
-  
+  }
+
+
+  .back {
+    font-weight: 100;
   }
   
   /* Form */

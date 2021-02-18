@@ -29,21 +29,44 @@ const cards = [
       cards: cards,
       newFrontText: '',
       newBackText: '',
+      error: false,
+    },
+    mounted() {
+      this.saveCards()
+      if (localStorage.getItem('cards')) {
+        try {
+          this.cats = JSON.parse(localStorage.getItem('cards'));
+        } catch(e) {
+          localStorage.removeItem('cards');
+        }
+      }
     },
     methods: {
       toggleCard: function(card) {
         card.flipped = !card.flipped
       },
       addNewCard: function() {
+        if (!this.newFrontText || !this.newBackText) {
+          this.error = true;
+        } else {
         this.cards.push({
           front: this.newFrontText,
           back: this.newBackText,
-          flipped: false
-        })
+          flipped: false,
+        });
+        this.saveCards(),
+        this.newFrontText =''
+        this.newBackText = '';
+        this.error = false;
+      }
       },
       deleteCard: function(index) {
         this.cards.splice(index, 1)
+        this.saveCards()
+      },
+      saveCards() {
+        const parsed = JSON.stringify(this.cards);
+        localStorage.setItem('cards', parsed);
       }
-
     }
   });
