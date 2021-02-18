@@ -1,159 +1,174 @@
 body {
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  
-  ul {
-    padding-left: 0;
-    display: flex;
-    flex-flow: row wrap;
-  }
-  
-  li {
-    list-style-type: none;
-    padding: 10px 10px;
-    transition: all 0.3s ease;
-  }
-  
-  .container {
-    max-width: 100%;
-    padding: 2em;
-  }
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  .container h3 {
-    font-weight: 300;
-    margin: 0;
-  }
-  .container h1 {
-    font-weight: 600;
-    margin: 10px 0 20px 0;
-    color: #e44e42;
-  }
-  
-  .card {
-    display: block;
-    width: 150px;
-    height: 140px;
-    padding: 50px 40px 30px 40px;
-    border-radius: 7px;
-    background-image: linear-gradient(to right, #ff5d31 0%, #f9d423 100%);
-    margin: 5px;
-    text-align: center;
-    line-height: 27px;
-    cursor: pointer;
-    position: relative;
-    color: #fff;
-    font-weight: 600;
-    font-size: 20px;
-    -webkit-box-shadow: 9px 10px 22px -8px rgba(209,193,209,.5);
-    -moz-box-shadow: 9px 10px 22px -8px rgba(209,193,209,.5);
-    box-shadow: 9px 10px 22px -8px rgba(209,193,209,.5);
-    will-change: transform;
-  }
-  
-  li:hover{
-    transform: scale(1.1);
-  }
-  
-  li:nth-child(-n+3) .card{
-    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-    }
-  
-  li:nth-child(2n+1) .card{
-    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);    
-  }
-  
-  li:nth-child(4n) .card{
-    background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);    
-  }
-  
-  li:nth-child(5n-2) .card{
-    background-image: linear-gradient(to right, #2af598 0%, #009efd 100%);
-    }
-  
-  li:nth-child(4n+4) .card{
-    background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
-    }
-  
-  li:nth-child(-7n+7) .card{
-    background-image: linear-gradient(to right, #7a7a79 0% #553b3e 30%, #e7627d 46%, #b8235a 59%, #801357 100%);
-    }
-  
-  .delete-card {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 10px 15px;
-    opacity: .4;
-    transition: all 0.5s ease;
-  }
-  
-  .delete-card:hover, .error {
-    opacity: 1;
-    transform: rotate(360deg);
-  }
-  
-  .flip-enter-active {
-    transition: all 0.4s ease;
-  }
-  
-  .flip-leave-active {
-    display: none;
-  }
-  
-  .flip-enter, .flip-leave {
-    transform: rotateY(180deg);
-    opacity: 0;
-  }
+ul {
+  padding-left: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
 
+li {
+  list-style-type: none;
+  padding: 10px 10px;
+  transition: all 0.3s ease;
+}
 
-  .back {
-    font-weight: 100;
-  }
-  
-  /* Form */
-  .flashcard-form{
-    position: relative;
-  }
-  
-  
-  label{
-    font-weight: 400;
-    color: #333;
-    margin-right: 10px;
-  }
-  
-  input{
-    border-radius: 5px;
-    border: 2px solid #eaeaea;
-    padding: 10px;
-    outline: none;
-  }
-  
-  button{
-    border-radius: 5px;
-    border: 1px solid #87cb84;
-    background-color: #87cb84;
-    padding: 8px 15px;
-    outline: none;
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  button:hover{
-    background-color: #70a66f;
-  }
-  
-  .error{
-    margin-top: 10px;
-    display: block;
-    color: #e44e42;
-    font-weight: 600;
-  }
+.container {
+  max-width: 100%;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.container h3 {
+  font-weight: 300;
+  margin: 0;
+  font-size: 14px;
+}
+
+.container h1 {
+  font-weight: 600;
+  margin: 10px 0 20px 0;
+  color: #e44e42;
+}
+
+.card {
+  display: block;
+  width: 150px;
+  height: 140px;
+  padding: 40px 30px 30px 30px;
+  border-radius: 7px;
+  background-image: linear-gradient(to right, #ff5d31 0%, #f9d423 100%);
+  margin: 5px;
+  text-align: center;
+  line-height: 27px;
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, .5);
+  -moz-box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, .5);
+  box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, .5);
+  will-change: transform;
+}
+
+li:hover {
+  transform: scale(1.1);
+}
+
+li:nth-child(-n+3) .card {
+  background-image: linear-gradient(to left, #4facfe 0%, #00f2fe 100%);
+}
+
+li:nth-child(2n+1) .card {
+  background-image: linear-gradient(to left, #fa709a 0%, #fee140 100%);
+}
+
+li:nth-child(4n) .card {
+  background-image: linear-gradient(to left, #30cfd0 0%, #330867 100%);
+}
+
+li:nth-child(5n-2) .card {
+  background-image: linear-gradient(to right, #2af598 0%, #009efd 100%);
+}
+
+li:nth-child(4n+4) .card {
+  background-image: linear-gradient(to left, #812ca8 0%,#ee609c 100%);
+}
+
+li:nth-child(-7n+7) .card {
+  background-image: linear-gradient(to right, #7a7a79 0% #553b3e 30%, #e7627d 46%, #b8235a 59%, #801357 100%);
+}
+
+.delete-card {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px 15px;
+  opacity: .7;
+  transition: all 0.5s ease;
+}
+
+.delete-card:hover, .error {
+  opacity: 1;
+  transform: rotate(360deg);
+}
+
+.flip-enter-active {
+  transition: all 0.4s ease;
+}
+
+.flip-leave-active {
+  display: none;
+}
+
+.flip-enter, .flip-leave {
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+
+.back {
+  font-weight: 100;
+}
+
+/* Form */
+.flashcard-form {
+  width: 300px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+label {
+  font-weight: 400;
+  color: #333;
+}
+
+input {
+  border-radius: 5px;
+  border: 2px solid #eaeaea;
+  padding: 10px;
+  outline: none;
+  margin: 10px 0 10px 10px;
+}
+
+button {
+  margin: 5px 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #87cb84;
+  padding: 8px 15px;
+  outline: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #70a66f;
+}
+
+.error {
+  margin-top: 10px;
+  display: block;
+  color: #e44e42;
+  font-weight: 600;
+}
+
+/* @media only screen and (min-width: 1500px) {
+  .about {
+    padding: 30px calc(10% + 80px);
+    ;
+  } */
