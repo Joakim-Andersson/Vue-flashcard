@@ -11,7 +11,7 @@
 <body>
   <div id="flashcard-app" class="container">
 
-    <h3>Flashcards to help you learn more about a </h3>
+    <h3>Flashcards to teach you more about a </h3>
     <h1>Vegan lifestyle</h1>
 
     <div class="flashcard-form">
@@ -24,8 +24,8 @@
         <input v-on:keypress.enter="addNewCard" v-model="newBackText" type="text" id="back">
       </label>
 
-      <button v-on:click="addNewCard"  >Add a New Card</button>
-      <span v-show="error" class="error">Oops! Flashcards need a front and a back.</span>
+      <button v-on:click="addNewCard">Add a New Card</button>
+      <span v-show="error" class="error">Oops! Flashcards need both front and back.</span>
     </div>
 
 
@@ -41,6 +41,12 @@
     </ul>
 
   </div>
+
+  <footer>
+    <p> Thank you for investing in the future, and learning more about a climate friendly way of living. </p> 
+    <p> Copyright <a href="http://heytherejoakim.com/">Joakim Andersson</a> 
+  </p>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
   <script src="app.js"></script>

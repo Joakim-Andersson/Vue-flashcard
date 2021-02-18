@@ -1,7 +1,7 @@
 const cards = [
     {
       front: 'How many Litres of water does it take to make a single meat-burger?',
-      back: '2393 liters. Vegan burger uses 75 percent less water.',
+      back: '2393 liters. (Vegan burgers use 75 percent less.)',
       flipped: false,
     },
     {
@@ -11,7 +11,7 @@ const cards = [
   
     },
     {
-      front: 'How many animals are slaugthered for their meat per hour in the US?',
+      front: 'How many animals are slaughtered for their meat per hour in the US?',
       back: 'Arund 500,000 animals.',
       flipped: false,
     },
