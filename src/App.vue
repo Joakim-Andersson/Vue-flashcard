@@ -1,8 +1,11 @@
 <template>
   <section class="app-body">
     <div id="flashcard-app" class="container">
-      <h3>Flashcards to teach you more about a</h3>
-      <h1>Vegan lifestyle</h1>
+      <h1>Vegan Flashcards</h1>
+      <h3>
+        Have fun while learning! <br />
+        And add more cards.
+      </h3>
 
       <div class="flashcard-form">
         <label for="front">
@@ -37,12 +40,10 @@
           v-for="(card, index) in cards"
         >
           <transition name="flip">
-            <p v-if="!card.flipped" key="front" class="card frontside">
-              {{ card.front }}
+            <p v-if="!card.flipped" key="front" class="card frontside">{{ card.front }}
               <span v-on:click="deleteCard(index)" class="delete-card">X</span>
             </p>
-            <p v-else key="back" class="card backside">
-              {{ card.back }}
+            <p v-else key="back" class="card backside">{{ card.back }}
               <span v-on:click="deleteCard(index)" class="delete-card">X</span>
             </p>
           </transition>
@@ -55,7 +56,10 @@
         Thank you for investing in the future, and learning more about a climate
         friendly way of living.
       </p>
-      <p>Copyright <a href="http://heytherejoakim.com/">Joakim Andersson</a></p>
+      <p>
+        Brought to you by
+        <a href="http://heytherejoakim.com/">Joakim Andersson</a>
+      </p>
     </footer>
   </section>
 </template>
@@ -170,6 +174,7 @@ body {
       rgba(0, 0, 0, 0.911)
     ),
     url("./assets/background3.jpg");
+  background-attachment: fixed;
   background-color: #002c25;
 }
 
@@ -204,19 +209,19 @@ li {
   border-radius: 10px;
 }
 
-.container h3 {
-  font-weight: 300;
-  margin: 0;
-  font-size: 14px;
-  color: rgb(0, 0, 0);
-}
-
 .container h1 {
   font-size: 40px;
   text-transform: uppercase;
   font-weight: 600;
-  margin: 10px 0 10px 0;
+  margin: 5px 0 5px 0;
   color: #005707;
+}
+
+.container h3 {
+  font-weight: 300;
+  margin: 0 10px;
+  font-size: 14px;
+  color: #1c6b23;
 }
 
 .card {
@@ -285,25 +290,24 @@ li:nth-child(3n + 3) .backside {
 }
 
 .flip-enter-active {
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
 
 .flip-leave-active {
   display: none;
 }
 
-.flip-enter,
-.flip-leave {
+.flip-enter{
   transform: rotateY(180deg);
   opacity: 0;
 }
 
-.back {
-  font-weight: 100;
+.flip-leave {
+  transform: rotateY(-180deg);
+  opacity: 0;
 }
 
 /* Form */
-
 .flashcard-form {
   width: 300px;
   padding: 10px;
@@ -392,7 +396,7 @@ footer a {
 }
 @media only screen and (min-width: 900px) {
   .container {
-    max-width: 900px;
+    margin: 6%;
   }
 }
 
